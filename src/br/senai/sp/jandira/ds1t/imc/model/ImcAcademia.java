@@ -44,22 +44,33 @@ public class ImcAcademia{
 
     public void definirSituacao() {
 
-        if (imc <= 16.9) {
+        if (imc >= 16.9) {
             situacao = "Muito abaixo do peso!";
-        } else if (imc <= 18.4) {
+        } else if (imc >= 18.4) {
             situacao = "Abaixo do peso!";
-        } else if (imc <= 24.5) {
+        } else if (imc >= 24.5) {
             situacao = "Peso normal!";
-        } else if (imc <= 29.9) {
+        } else if (imc >= 29.9) {
             situacao = "Acima do peso!";
-        } else if (imc <=34.9) {
-            situacao = "Obesidade grau 1";
+        } else if (imc >=34.9) {
+            situacao = "Obesidade grau 1!";
         } else if (imc >= 40){
-            situacao = "Obesidade grau 2";
+            situacao = "Obesidade grau 2!!";
         } else if (imc <40) {
-            situacao = "Obesidade grau 3";
+            situacao = "Obesidade grau 3!!!";
         }
 
+        exibirResultadosDoImc();
+    }
+
+    public void exibirResultadosDoImc(){
+
+        String ImcDeUmDigito = String.format("%.1f", imc);
+
+        System.out.println("**************************");
+        System.out.println("Nome do Aluno:" + nomeDoAluno);
+        System.out.println("IMC do Aluno:" + ImcDeUmDigito + " ele está com " + situacao);
+        System.out.println("***************************");
     }
 
 
